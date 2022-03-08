@@ -1,0 +1,29 @@
+<h1>Supplier List</h1>
+<br>
+<a href="/suppliers/add" class="btn btn-primary"> <i class="fa fa-plus"></i>Add new supplier</a>
+<br>
+<br>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Description</th>
+        <th></th>
+    </tr>
+    {{#each suppliers}}
+    <tr>
+        <td>{{{name}}}</td>
+        <td>{{{phone}}}</td>
+        <td>{{{email}}}</td>
+        <td>{{{address}}}</td>
+        <td>{{{description}}}</td>
+        <td>
+            <a href="/suppliers/view?id={{{_id}}}"><i class="fa fa-eye"></i></a>
+            <a href="/suppliers/update?id={{{_id}}}"><i class="fa fa-pen"></i></a>  
+            <a onclick="return confirm('Confirm Delete?')" href="/suppliers/delete?id={{{_id}}}"><i class="fa fa-trash"></i></a>
+        </td>
+    </tr>
+    {{/each}}
+</table>

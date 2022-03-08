@@ -1,0 +1,42 @@
+<form action="/products/updateProduct" enctype="multipart/form-data" method="POST">
+    <div class="form-group">
+        <label for="name">Tên sản phẩm</label>
+        <input type="text" name="name" id="name" class="form-control" value="{{product.name}}">
+    </div>
+    <div class="form-group">
+        <label for="price">Giá thành</label>
+        <input type="text" name="price" id="price" class="form-control" value="{{product.price}}">
+    </div>
+    <div class="form-group">
+    <label for="supplier">Supplier</label>
+        <select name="supplier" id="" class="form-control">
+            {{#each suppliers}}
+            <option  {{selected _id ../product.supplier_id}} value="{{{_id}}}">{{{name}}}</option>
+            {{/each}}
+        </select>
+    </div> 
+    <div>
+    <label for="category">Category</label>
+        <select name="category" id="" class="form-control">
+            {{#each categories}}
+            <option {{selected _id ../product.category_id}} value="{{{_id}}}">{{{name}}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="description">Mô tả</label>
+        <textarea name="description" id="description" cols="30" rows="10">{{product.description}}
+        </textarea>
+    </div>
+    <div class="form-group">
+        <label for="avatar">Hình ảnh</label>
+        <input type="file" name="avatar" id="avatar" class="form-control">
+    </div>
+    <img width="250" src="/uploads/{{{product.avatar}}}" alt="">
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" name="submit" id="submit" value="Cập nhật">
+    </div>
+    <input type="hidden" name="old_avatar" value="{{{product.avatar}}}">
+    <input type="hidden" name="id" value="{{{product._id}}}">
+</form>

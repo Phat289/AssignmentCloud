@@ -1,0 +1,37 @@
+<h1>Danh sach san pham</h1>
+
+<a href="/products/addProduct" class="btn btn-primary">Them san pham <i class="fa fa-plus"></i></a>
+
+<br><br>
+<form action="/products/doSearch" method="POST">
+    <div class="form-group">
+        <input type="text" class="form-control" name="search" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn-primary" name="submit" value="Tim kiem">
+        <input type="reset">
+    </div>
+</form>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Tên</th>
+        <th>Giá</th>
+        <th>Mô tả</th>
+        <th>Ảnh</th>
+        <th>    </th>
+    </tr>
+    {{#each product3}}
+    <tr>
+        <td>{{{_id}}}</td>
+        <td>{{{name}}}</td>
+        <td>{{{price}}}</td>
+        <td>{{{description}}}</td>
+         <td><img width="150px" src="/uploads/{{{avatar}}}" alt=""></td>
+        <td><a href="/products/update?id={{{_id}}}"> <i class="fa fa-pen"></i> </a><a href="/products/view?id={{{_id}}}"> <i class="fa fa-eye"></i> </a>
+        <a href="/products/delete?id={{{_id}}}&img={{{avatar}}}" onclick="return confirm('Are you sure')"> <i class="fa fa-trash"></i> </a></td>
+        
+    </tr>
+    {{/each}}
+</table>

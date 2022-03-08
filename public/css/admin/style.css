@@ -1,0 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower');
+
+
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  font-family: 'Gamja Flower';
+}
+
+.main-header .sidebar-toggle:before {
+  content: "";
+}
+
+.content-wrap {
+  min-height: 0 !important;
+  overflow: auto;
+}
+
+
+.images-box {
+  width: 100%;
+  white-space: nowrap;
+ /*  */
+  position: relative;
+  overflow-x: auto;
+}
+
+.images-box .image-item {
+  display: inline-block;
+  width: 25%;
+  height: 550px;
+  border: solid 1px #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.images-box .image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 3;
+}
+
+/* .image-item:hover+.preview-image {
+  visibility: visible;
+  transition: ease width 2s, height 4s;
+} */
+
+.images-box .image-item .remove-btn {
+  position: absolute;
+  background: #d55;
+  z-index: 2;
+  top: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  z-index: 5;
+  border-radius: 50%;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #fff;
+}
+
+.images-box .image-item .remove-btn:hover+img {
+  filter: blur(2px) grayscale(1);
+}
+
+.table td {
+  height: 25px;
+  
+}
+
+.preview-box {
+  width: 100%;
+  white-space: nowrap;
+ /*  */
+  position: relative;
+  height: 20px;
+}
+
+.preview-box .preview-image {
+  position: absolute;
+  z-index: 22;
+  visibility: hidden;
+  align-self: center;
+  border: double #000000 2px;
+  top: -200px;
+  transition: ease ;
+  left: 25%;
+}
+
+.preview-box .preview-image img {
+  height: 550px;
+}
+
+.main-header .brand-link h3 {
+  font-size: 55px;
+  color: #fff;
+}
+
+.main-header .brand-link h3:hover {
+  color: #ef5777;
+}
+
+
+
+
+.main-sidebar {
+  background-color: #0275d8;
+}
+
+.main-sidebar .sidebar-menu {
+  margin: 0;
+  padding: 0;
+  /* background-color: #0275d8; */
+}
+
+.main-sidebar .sidebar-menu li {
+  padding: 15px 0px;
+  font-size: 20px;
+ 
+}
+
+.main-sidebar .sidebar-menu a {
+
+}

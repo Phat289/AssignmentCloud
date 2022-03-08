@@ -1,0 +1,24 @@
+<h1>Category List</h1>
+<br>
+<a href="/categories/add" class="btn btn-primary"> <i class="fa fa-plus"></i>Add new category</a>
+<br>
+<br>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th></th>
+    </tr>
+    {{#each categories}}
+    <tr>
+        <td>{{{name}}}</td>
+        <td>{{{description}}}</td>
+        <td>
+            <a href="/categories/view?id={{{_id}}}"><i class="fa fa-eye"></i></a>
+            <a href="/categories/update?id={{{_id}}}"><i class="fa fa-pen"></i></a> 
+            <a onclick="return confirm('Are you sure')" href="/categories/delete?id={{{_id}}}"><i class="fa fa-trash"></i></a>
+        </td>
+    </tr>
+    {{/each }}
+
+</table>

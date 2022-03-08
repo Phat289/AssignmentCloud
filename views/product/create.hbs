@@ -1,0 +1,37 @@
+<form action="/products/addProductF" enctype="multipart/form-data" method="POST">
+    <div class="form-group">
+        <label for="name">Tên sản phẩm</label>
+        <input type="text" name="name" id="name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="price">Giá thành</label>
+        <input type="text" name="price" id="price" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="avatar">Hình ảnh</label>
+        <input type="file" name="avatar" id="avatar" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="description">Mô tả</label>
+        <textarea name="description" id="description" cols="30" rows="10">
+        </textarea>
+    </div>
+    <div class="form-group">
+        <select name="supplier" id="" class="form-control">
+            {{#each suppliers}}
+            <option value="{{{_id}}}">{{{name}}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div>
+        <select name="category" id="" class="form-control">
+            {{#each categories}}
+            <option value="{{{_id}}}">{{{name}}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" name="submit" id="submit" value="Thêm mới">
+    </div>
+</form>

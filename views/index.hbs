@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/myStyle.css">
+</head>
+<body>
+    
+</body>
+</html>
+
+<div class="row product-list">
+   {{#each products}}
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+        <div class="product-grid">
+            <div class="product-image">
+                <a href="">
+                    <img class="pic1 img-responsive img-fluid" src="/uploads/{{{avatar}}}" alt="">
+                    <img class="pic2 img-responsive img-fluid" src="/uploads/{{{avatar}}}" alt="">
+                </a>
+                <ul class="social">
+                    <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                    <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                    <li><a href="" data-tip="Add to Cart" data-id="<?php echo $product['id'] ?>" class="add"><i class="fa fa-shopping-cart"></i></a></li>
+                </ul>
+                <span class="product-new-label">New</span>
+                <span class="product-discount-label">Sale</span>
+            </div>
+            <ul class="rating">
+                <li><i class="fa fa-star fa-xs"></i></li>
+                <li><i class="fa fa-star fa-xs"></i></li>
+                <li><i class="fa fa-star fa-xs"></i></li>
+                <li><i class="fa fa-star fa-xs"></i></li>
+                <li><i class="fa fa-star fa-xs"></i></li>
+            </ul>
+            <div class="product-content">
+                <h3 class="title">
+                    <a href="">
+                        {{{name}}}
+                    </a>
+                </h3>
+                <div class="price">
+                   {{{price}}}
+                    <span></span>
+                </div>
+                <!-- <div class="add-to-cart">
+                    <a class="" href=""><i class="fa fa-plus">Add to cart</i></a>
+                </div> -->
+                
+            </div>
+        </div>
+    </div>
+   {{/each}}
+</div>
+
+<br>
+<br>
+
+
